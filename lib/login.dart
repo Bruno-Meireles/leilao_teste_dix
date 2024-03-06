@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/cadastro.dart';
 
 import 'apresentacao.dart';
 
@@ -10,6 +11,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  String email = "";
+  String password = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +59,9 @@ class _LoginState extends State<Login> {
               ),
             ),
             TextFormField(
+              onChanged: (text) {
+                email = text;
+              },
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
                 fillColor: Color(0xffFFFFFF),
@@ -82,6 +88,9 @@ class _LoginState extends State<Login> {
               ),
             ),
             TextFormField(
+              onChanged: (text) {
+                password = text;
+              },
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: const InputDecoration(
@@ -131,7 +140,15 @@ class _LoginState extends State<Login> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (email == 'fabioln@ldix.com' && password == '1234567o') {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const Cadastro(),
+                    ),
+                  );
+                }
+              },
               style: ElevatedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(

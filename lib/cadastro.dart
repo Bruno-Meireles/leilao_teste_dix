@@ -94,6 +94,10 @@ class Cadastro extends StatelessWidget {
                       Radius.circular(3),
                     ),
                   ),
+                  suffixIcon: Icon(
+                    Icons.visibility_off,
+                    color: Colors.black26,
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
@@ -117,6 +121,10 @@ class Cadastro extends StatelessWidget {
                     borderRadius: BorderRadius.all(
                       Radius.circular(3),
                     ),
+                  ),
+                  suffixIcon: Icon(
+                    Icons.visibility_off,
+                    color: Colors.black26,
                   ),
                 ),
               ),
