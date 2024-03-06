@@ -12,22 +12,24 @@ class Cadastro extends StatelessWidget {
       home: Scaffold(
         backgroundColor: const Color(0xff222222),
         appBar: AppBar(
-          title: const Text("Criar Conta"),
+          backgroundColor: const Color(0xff262629),
+          title: const Center(
+              child: Text(
+            "Criar Conta",
+            style: TextStyle(color: Color(0xffFFFFFF)),
+          )),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "Nome completo",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xffFFFFFF),
-                  ),
+              const Text(
+                "Nome completo",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xffFFFFFF),
                 ),
               ),
               TextFormField(
@@ -47,14 +49,11 @@ class Cadastro extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "Email",
-                  style: TextStyle(
-                    color: Color(0xffFFFFFF),
-                    fontSize: 16,
-                  ),
+              const Text(
+                "Email",
+                style: TextStyle(
+                  color: Color(0xffFFFFFF),
+                  fontSize: 16,
                 ),
               ),
               TextFormField(
@@ -74,14 +73,11 @@ class Cadastro extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "Senha",
-                  style: TextStyle(
-                    color: Color(0xffFFFFFF),
-                    fontSize: 16,
-                  ),
+              const Text(
+                "Senha",
+                style: TextStyle(
+                  color: Color(0xffFFFFFF),
+                  fontSize: 16,
                 ),
               ),
               TextFormField(
@@ -101,14 +97,11 @@ class Cadastro extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  "Confirme sua senha",
-                  style: TextStyle(
-                    color: Color(0xffFFFFFF),
-                    fontSize: 16,
-                  ),
+              const Text(
+                "Confirme sua senha",
+                style: TextStyle(
+                  color: Color(0xffFFFFFF),
+                  fontSize: 16,
                 ),
               ),
               TextFormField(
@@ -130,23 +123,29 @@ class Cadastro extends StatelessWidget {
               const SizedBox(
                 height: 13,
               ),
-              const Column(
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.check_box),
-                      Text(
-                        "Ao criar sua conta você concorda com os ",
-                        style: TextStyle(
-                          color: Color(0xffFFFFFF),
+              const Center(
+                child: Column(
+                  children: [
+                    Wrap(
+                      children: [
+                        Icon(
+                          Icons.check_box_outline_blank,
+                          color: Color(0xffAE841A),
                         ),
-                      ),
-                      Text(
-                        ("Termos de Uso e Politica de Privacidade"),
-                      ),
-                    ],
-                  ),
-                ],
+                        Text(
+                          "  Ao criar sua conta você concorda com os ",
+                          style: TextStyle(
+                            color: Color(0xffFFFFFF),
+                          ),
+                        ),
+                        Text(
+                          "        Termos de Uso e Politica de Privacidade",
+                          style: TextStyle(color: Color(0xffFFFFFF)),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 20),
               SizedBox(

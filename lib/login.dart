@@ -45,53 +45,56 @@ class _LoginState extends State<Login> {
             const SizedBox(
               height: 20,
             ),
-            const Text(
-              "Email",
-              style: TextStyle(color: Colors.white),
-            ),
             const SizedBox(
               height: 16,
+            ),
+            const Text(
+              " Email",
+              style: TextStyle(
+                color: Color(0xffFFFFFF),
+                fontSize: 16,
+              ),
             ),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
-                label: Text(
-                  "email@example.com",
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                fillColor: Color(0xfD9D9D9f),
+                fillColor: Color(0xffFFFFFF),
                 filled: true,
-                labelStyle: TextStyle(
-                  color: Colors.white,
+                hintText: "Informe seu E-mail",
+                hintStyle: TextStyle(
+                  color: Color(0xff2D2D2D),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(7),
+                  ),
                 ),
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 16,
             ),
             const Text(
-              "Senha",
-              style: TextStyle(color: Colors.white),
-            ),
-            const SizedBox(
-              height: 16,
+              " Senha",
+              style: TextStyle(
+                color: Color(0xffFFFFFF),
+                fontSize: 16,
+              ),
             ),
             TextFormField(
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: const InputDecoration(
-                label: Text(
-                  "********",
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-                fillColor: Color(0xfD9D9D9f),
+                fillColor: Color(0xffFFFFFF),
                 filled: true,
-                labelStyle: TextStyle(
-                  color: Colors.white,
+                hintText: "********",
+                hintStyle: TextStyle(
+                  color: Color(0xff2D2D2D),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(7),
+                  ),
                 ),
               ),
             ),

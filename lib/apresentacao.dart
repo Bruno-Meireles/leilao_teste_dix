@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/login.dart';
 
 // void main() {
 //   runApp(
@@ -18,11 +21,11 @@ class ApresentacaoState extends State<Apresentacao> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      const Duration(seconds: 3),
-    ).then(
-      (_) => Navigator.of(context).pushReplacementNamed('/Login'),
-    );
+    Timer(const Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const Login()),
+      );
+    });
   }
 
   @override

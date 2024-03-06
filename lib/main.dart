@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:leilao_teste_dix/cadastro.dart';
 
 import 'apresentacao.dart';
 import 'login.dart';
+import 'cadastro.dart';
 
 void main() {
   runApp(
     const MaterialApp(
-      home: Cadastro(),
+      home: Apresentacao(),
     ),
   );
 }
@@ -28,6 +28,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/apresentacao': (_) => const Apresentacao(),
         '/login': (_) => const Login(),
+        '/cadrastro': (_) => const Cadastro(),
       },
     );
   }
