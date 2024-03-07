@@ -1,5 +1,5 @@
-// cadastro.dart
 import 'package:flutter/material.dart';
+import 'components/form.dart';
 
 class Cadastro extends StatelessWidget {
   const Cadastro({super.key});
@@ -13,121 +13,62 @@ class Cadastro extends StatelessWidget {
         title: const Center(
           child: Text(
             "Criar Conta",
-            style: TextStyle(color: Color(0xffFFFFFF)),
+            style: TextStyle(
+              fontFamily: "Poppins",
+              color: Color(0xffFFFFFF),
+            ),
           ),
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text(
-              "Nome completo",
-              style: TextStyle(
-                fontSize: 16,
-                color: Color(0xffFFFFFF),
-              ),
+            const SizedBox(
+              height: 20,
             ),
-            TextFormField(
-              keyboardType: TextInputType.name,
-              decoration: const InputDecoration(
-                fillColor: Color(0xffFFFFFF),
-                filled: true,
-                hintText: "Informe seu Nome completo",
-                hintStyle: TextStyle(
-                  color: Color(0xff2D2D2D),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(3),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Email",
-              style: TextStyle(
-                color: Color(0xffFFFFFF),
-                fontSize: 16,
-              ),
-            ),
-            TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                fillColor: Color(0xffFFFFFF),
-                filled: true,
-                hintText: "Informe seu E-mail",
-                hintStyle: TextStyle(
-                  color: Color(0xff2D2D2D),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(3),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Senha",
-              style: TextStyle(
-                color: Color(0xffFFFFFF),
-                fontSize: 16,
-              ),
-            ),
-            TextFormField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                fillColor: Color(0xffFFFFFF),
-                filled: true,
-                hintText: "Digite sua senha",
-                hintStyle: TextStyle(
-                  color: Color(0xff2D2D2D),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(3),
-                  ),
-                ),
-                suffixIcon: Icon(
-                  Icons.visibility_off,
-                  color: Colors.black26,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Confirme sua senha",
-              style: TextStyle(
-                color: Color(0xffFFFFFF),
-                fontSize: 16,
-              ),
-            ),
-            TextFormField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                fillColor: Color(0xffFFFFFF),
-                filled: true,
-                hintText: "Confirme sua senha",
-                hintStyle: TextStyle(
-                  color: Color(0xff2D2D2D),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(3),
-                  ),
-                ),
-                suffixIcon: Icon(
-                  Icons.visibility_off,
-                  color: Colors.black26,
-                ),
-              ),
+            CustomTextFormField(
+              key: UniqueKey(),
+              labelText: "Nome Completo",
+              hintText: "Informe seu Nome completo",
+              keyboardType: TextInputType.text,
+              controller: TextEditingController(),
             ),
             const SizedBox(
-              height: 13,
+              height: 20,
+            ),
+            CustomTextFormField(
+              key: UniqueKey(),
+              labelText: "E-mail",
+              hintText: "Informe seu E-mail",
+              controller: TextEditingController(),
+            ),
+            CustomTextFormField(
+              key: UniqueKey(),
+              labelText: "Celular",
+              hintText: "Informe seu Celular",
+              controller: TextEditingController(),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CustomTextFormField(
+              key: UniqueKey(),
+              labelText: "Senha",
+              hintText: "Informe sua Senha",
+              controller: TextEditingController(),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CustomTextFormField(
+              key: UniqueKey(),
+              labelText: "Senha",
+              hintText: "Confirmar senha",
+              controller: TextEditingController(),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             const Center(
               child: Column(
