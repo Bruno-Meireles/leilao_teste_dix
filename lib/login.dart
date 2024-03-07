@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:leilao_teste_dix/cadastro.dart';
-
-import 'apresentacao.dart';
+import 'package:leilao_teste_dix/apresentacao.dart';
+import 'package:leilao_teste_dix/router/path.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -29,7 +28,6 @@ class _LoginState extends State<Login> {
             colors: [Color(0xff091409), Color(0xff262629), Color(0xff000000)],
           ),
         ),
-        // color: Colors.white,
         child: ListView(
           children: [
             SizedBox(
@@ -122,7 +120,11 @@ class _LoginState extends State<Login> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (email == 'fabioln@ldix.com' && password == '1234567o') {
+                  Navigator.pushNamed(context, Routers.cadastro.name);
+                }
+              },
               style: ElevatedButton.styleFrom(
                 shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(7))),
                 padding: const EdgeInsets.all(20),
@@ -140,15 +142,7 @@ class _LoginState extends State<Login> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {
-                if (email == 'fabioln@ldix.com' && password == '1234567o') {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const Cadastro(),
-                    ),
-                  );
-                }
-              },
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(

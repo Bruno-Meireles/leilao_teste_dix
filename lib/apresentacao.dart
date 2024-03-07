@@ -1,35 +1,18 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:leilao_teste_dix/login.dart';
 
-// void main() {
-//   runApp(
-//     const MaterialApp(
-//     ),
-//   );
-// }
-
-class Apresentacao extends StatefulWidget {
+class Apresentacao extends StatelessWidget {
   const Apresentacao({super.key});
 
   @override
-  State<Apresentacao> createState() => ApresentacaoState();
-}
-
-class ApresentacaoState extends State<Apresentacao> {
-  @override
-  void initState() {
-    super.initState();
-    Timer(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const Login()),
-      );
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        Navigator.of(context).pushReplacementNamed('login');
+      },
+    );
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -65,7 +48,6 @@ class ApresentacaoState extends State<Apresentacao> {
                 const CircularProgressIndicator(
                   color: Colors.white38,
                 ),
-                // Image.asset("image/CircularSpinner.png"),
                 TextButton(
                   onPressed: () {},
                   child: Image.asset("image/Logo-dix_branca.png"),
