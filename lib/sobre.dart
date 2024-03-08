@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'components/app.bar.dart';
 
-class Sobre extends StatelessWidget {
+class Sobre extends StatefulWidget {
   const Sobre({
     super.key,
   });
 
   @override
+  State<Sobre> createState() => _SobreState();
+}
+
+class _SobreState extends State<Sobre> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        // bottomNavigationBar: BottomNavigationBar(items: [
+        //   BottomNavigationBarItem(icon: (Icons.search))
+        // ]),
         backgroundColor: const Color(0xff222222),
         appBar: CustomAppBar(
           image: Image.asset("image/hamburguer.png"),
