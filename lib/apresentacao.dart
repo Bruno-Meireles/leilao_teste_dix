@@ -1,18 +1,28 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class Apresentacao extends StatelessWidget {
+class Apresentacao extends StatefulWidget {
   const Apresentacao({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  // ignore: library_private_types_in_public_api
+  _ApresentacaoState createState() => _ApresentacaoState();
+}
+
+class _ApresentacaoState extends State<Apresentacao> {
+  @override
+  void initState() {
+    super.initState();
     Timer(
       const Duration(seconds: 3),
       () {
         Navigator.of(context).pushReplacementNamed('login');
       },
     );
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(

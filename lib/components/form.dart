@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   final String labelText;
   final String hintText;
 
@@ -18,25 +18,30 @@ class CustomTextFormField extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          labelText,
+          widget.labelText,
           style: const TextStyle(
             fontSize: 16,
             color: Color(0xffFFFFFF),
           ),
         ),
         TextFormField(
-          controller: controller,
-          keyboardType: keyboardType,
-          obscureText: obscureText,
+          controller: widget.controller,
+          keyboardType: widget.keyboardType,
+          obscureText: widget.obscureText,
           decoration: InputDecoration(
             fillColor: const Color(0xffFFFFFF),
             filled: true,
-            hintText: hintText,
+            hintText: widget.hintText,
             hintStyle: const TextStyle(
               color: Color(0xff2D2D2D),
             ),

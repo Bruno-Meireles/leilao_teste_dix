@@ -1,36 +1,19 @@
 import 'package:flutter/material.dart';
+import 'components/app.bar.dart';
 
-class Sobre extends StatefulWidget {
-  const Sobre({super.key});
+class Sobre extends StatelessWidget {
+  const Sobre({
+    super.key,
+  });
 
-  @override
-  State<Sobre> createState() => _SobreState();
-}
-
-class _SobreState extends State<Sobre> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xff222222),
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Image.asset("image/hamburguer.png"),
-              const SizedBox(
-                width: 115,
-              ),
-              const Text(
-                "Sobre nós",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xffFFFFFF),
-                ),
-              ),
-            ],
-          ),
+        appBar: CustomAppBar(
+          image: Image.asset("image/hamburguer.png"),
+          text: "Sobre nós",
         ),
         body: const Column(
           children: [
@@ -50,12 +33,26 @@ class _SobreState extends State<Sobre> {
             ),
             Column(
               children: [
-                Text(
-                  "Eu nunca imaginei que seria tão fácil e prático comprar e vender gado. Com a plataforma LN, eu consegui fazer bons negócios de forma simples e descomplicada. Estou muito satisfeito com a tecnologia e praticidade oferecidas pela empresa.",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xffFFFFFF),
-                  ),
+                Column(
+                  children: [
+                    Text(
+                      "Eu nunca imaginei que seria tão fácil e prático comprar e vender gado. Com a plataforma LN, eu consegui fazer bons negócios de forma simples e descomplicada. Estou muito satisfeito com a tecnologia e praticidade oferecidas pela empresa.",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xffFFFFFF),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Eu sempre tive receio de vender meu lote de gado e assumir todo o risco sozinho. Mas com a LN, não precisei me preocupar com isso. A empresa assumiu o risco junto comigo e só paguei a comissão após a comercialização. Foi uma experiência muito positiva..",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xffFFFFFF),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

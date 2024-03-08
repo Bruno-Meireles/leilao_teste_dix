@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leilao_teste_dix/router/path.dart';
+import 'package:leilao_teste_dix/sobre.dart';
 
 import 'apresentacao.dart';
 import 'login.dart';
@@ -7,7 +8,7 @@ import 'cadastro.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    const Sobre(),
   );
 }
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Apresentacao(),
+      home: const Sobre(),
       initialRoute: 'apresentacao',
       routes: {
         Routers.apresentacao.name: (_) => const Apresentacao(),
