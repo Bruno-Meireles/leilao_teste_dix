@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leilao_teste_dix/apresentacao.dart';
+import 'package:leilao_teste_dix/cadastro.dart';
 import 'package:leilao_teste_dix/router/path.dart';
 
 class Login extends StatefulWidget {
@@ -142,7 +143,9 @@ class _LoginState extends State<Login> {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Cadastro()));
+              },
               style: ElevatedButton.styleFrom(
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(

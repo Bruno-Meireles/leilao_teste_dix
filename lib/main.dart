@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/venda.direta.dart';
 import 'package:leilao_teste_dix/router/path.dart';
-import 'package:leilao_teste_dix/sobre.dart';
-
 import 'apresentacao.dart';
 import 'login.dart';
 import 'cadastro.dart';
 
 void main() {
   runApp(
-    const Sobre(),
+    const VendaDireta(),
   );
 }
 
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Sobre(),
+      home: const VendaDireta(),
       initialRoute: 'apresentacao',
       routes: {
         Routers.apresentacao.name: (_) => const Apresentacao(),

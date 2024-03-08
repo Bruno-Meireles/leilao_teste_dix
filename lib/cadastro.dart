@@ -6,6 +6,12 @@ class Cadastro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final nameControler = TextEditingController();
+    final emailControler = TextEditingController();
+    final celularControler = TextEditingController();
+    final senhaControler = TextEditingController();
+    final confirmarSenhaControler = TextEditingController();
+
     return Scaffold(
       backgroundColor: const Color(0xff222222),
       appBar: AppBar(
@@ -32,7 +38,7 @@ class Cadastro extends StatelessWidget {
               labelText: "Nome Completo",
               hintText: "Informe seu Nome completo",
               keyboardType: TextInputType.text,
-              controller: TextEditingController(),
+              controller: nameControler,
             ),
             const SizedBox(
               height: 20,
@@ -41,13 +47,13 @@ class Cadastro extends StatelessWidget {
               key: UniqueKey(),
               labelText: "E-mail",
               hintText: "Informe seu E-mail",
-              controller: TextEditingController(),
+              controller: emailControler,
             ),
             CustomTextFormField(
               key: UniqueKey(),
               labelText: "Celular",
               hintText: "Informe seu Celular",
-              controller: TextEditingController(),
+              controller: celularControler,
             ),
             const SizedBox(
               height: 20,
@@ -56,7 +62,7 @@ class Cadastro extends StatelessWidget {
               key: UniqueKey(),
               labelText: "Senha",
               hintText: "Informe sua Senha",
-              controller: TextEditingController(),
+              controller: senhaControler,
             ),
             const SizedBox(
               height: 20,
@@ -65,7 +71,7 @@ class Cadastro extends StatelessWidget {
               key: UniqueKey(),
               labelText: "Senha",
               hintText: "Confirmar senha",
-              controller: TextEditingController(),
+              controller: confirmarSenhaControler,
             ),
             const SizedBox(
               height: 20,
@@ -108,7 +114,7 @@ class Cadastro extends StatelessWidget {
                   backgroundColor: const Color(0xff008800),
                 ),
                 onPressed: () {
-                  // Lógica para criar conta
+                  
                 },
                 child: const Text(
                   "Criar Conta",

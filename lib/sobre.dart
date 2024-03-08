@@ -15,9 +15,7 @@ class _SobreState extends State<Sobre> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // bottomNavigationBar: BottomNavigationBar(items: [
-        //   BottomNavigationBarItem(icon: (Icons.search))
-        // ]),
+        // bottomNavigationBar: BottomNavigationBar(items: [items]),
         backgroundColor: const Color(0xff222222),
         appBar: CustomAppBar(
           image: Image.asset("image/hamburguer.png"),
