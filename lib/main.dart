@@ -3,6 +3,7 @@ import 'package:leilao_teste_dix/router/path.dart';
 import 'apresentacao.dart';
 import 'login.dart';
 import 'cadastro.dart';
+import 'venda.direta.dart'; // Importe a classe VendaDireta
 
 void main() {
   runApp(
@@ -17,12 +18,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const Login(),
-      initialRoute: 'apresentacao',
+      initialRoute: Routers.vendaDireta.name, //Definir a tela de venda direta como inicial
+      // initialRoute: Routers.apresentacao.name, // Definir a tela de apresentação como inicial
       routes: {
         Routers.apresentacao.name: (_) => const Apresentacao(),
         Routers.login.name: (_) => const Login(),
         Routers.cadastro.name: (_) => const Cadastro(),
+        Routers.vendaDireta.name: (_) => const VendaDireta(), // Adicione a rota para VendaDireta
       },
     );
   }

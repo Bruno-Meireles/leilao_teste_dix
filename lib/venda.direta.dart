@@ -18,7 +18,7 @@ class _VendaDiretaState extends State<VendaDireta> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: screens[currentIndex],
+        body: screens[currentIndex], // parte de baixo dos botões
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: const Color(0xff262629),
@@ -47,6 +47,8 @@ class _VendaDiretaState extends State<VendaDireta> {
             ),
           ],
         ),
+
+        // codigo da minha app bar com logo
         appBar: AppBar(
           title: const Text(
             "Venda Direta",
