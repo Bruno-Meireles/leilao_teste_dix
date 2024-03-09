@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/leilao.dart';
+import 'package:leilao_teste_dix/resultados.dart';
 
 class VendaDireta extends StatefulWidget {
   const VendaDireta({super.key});
@@ -9,11 +11,14 @@ class VendaDireta extends StatefulWidget {
 
 class _VendaDiretaState extends State<VendaDireta> {
   int currentIndex = 0;
+  final screens = [const Leilao(), const VendaDireta(), const Resultados()];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        body: screens[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: const Color(0xff262629),
@@ -21,11 +26,15 @@ class _VendaDiretaState extends State<VendaDireta> {
           unselectedItemColor: const Color(0xffFFFFFF),
           iconSize: 30,
           selectedFontSize: 12,
-          onTap: (index) => setState(() => currentIndex = index),
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
           currentIndex: currentIndex,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.ac_unit),
+              icon: Icon(Icons.av_timer_sharp),
               label: "Leilões",
             ),
             BottomNavigationBarItem(
@@ -66,9 +75,7 @@ class _VendaDiretaState extends State<VendaDireta> {
                 color: Color(0xFfFFFFFF),
               ),
               tooltip: 'Open shopping cart',
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
+              onPressed: () {},
             ),
           ],
           leading: Builder(
@@ -78,9 +85,7 @@ class _VendaDiretaState extends State<VendaDireta> {
                   Icons.menu,
                   color: Colors.white,
                 ),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
+                onPressed: () {},
               );
             },
           ),

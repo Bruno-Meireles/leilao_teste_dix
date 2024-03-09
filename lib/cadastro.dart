@@ -15,7 +15,11 @@ class Cadastro extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xff222222),
       appBar: AppBar(
-        backgroundColor: const Color(0xff262629),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage("image/appbar.png"), fit: BoxFit.cover),
+          ),
+        ),
         title: const Center(
           child: Text(
             "Criar Conta",
@@ -113,9 +117,7 @@ class Cadastro extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   backgroundColor: const Color(0xff008800),
                 ),
-                onPressed: () {
-                  
-                },
+                onPressed: () {},
                 child: const Text(
                   "Criar Conta",
                   style: TextStyle(

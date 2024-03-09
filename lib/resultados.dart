@@ -10,6 +10,8 @@ class Resultados extends StatefulWidget {
 class _ResultadosState extends State<Resultados> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Text("olá tela resultados"),
+    );
   }
 }

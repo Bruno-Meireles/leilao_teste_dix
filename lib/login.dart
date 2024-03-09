@@ -22,11 +22,11 @@ class _LoginState extends State<Login> {
           left: 40,
           right: 40,
         ),
+        height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            colors: [Color(0xff091409), Color(0xff262629), Color(0xff000000)],
+          image: DecorationImage(
+            image: AssetImage("image/degrade.png"),
+            fit: BoxFit.cover,
           ),
         ),
         child: ListView(

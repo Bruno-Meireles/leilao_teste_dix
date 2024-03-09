@@ -25,8 +25,12 @@ class _ApresentacaoState extends State<Apresentacao> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
-          color: Color(0xff224225),
+          image: DecorationImage(
+            image: AssetImage("image/background.logo.png"),
+            fit: BoxFit.cover,
+          ),
         ),
         padding: const EdgeInsets.only(
           top: 200,
