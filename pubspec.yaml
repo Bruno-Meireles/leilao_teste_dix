@@ -31,3 +31,8 @@ flutter:
     - image/logo.apresentacao.png
     - image/Logo-dix_branca.png
     - image/appbar.png
+    - image/avatar.png
+    - image/assets/icons/vendaDireta.png
+    - image/assets/icons/leiloes.png
+    - image/assets/icons/resultados.png
+    - image/assets/icons/settings.png

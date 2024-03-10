@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/login.dart';
 import 'package:leilao_teste_dix/utils/app.colors.dart';
 
 class Leilao extends StatefulWidget {
@@ -11,14 +12,203 @@ class Leilao extends StatefulWidget {
 class _LeilaoState extends State<Leilao> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Leilão"),
-      ),
-      drawer: Drawer(
-        child: ListView(children: [
-          
-        ],),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.backgoundColor,
+        appBar: AppBar(
+          backgroundColor: AppColors.black,
+          foregroundColor: AppColors.white,
+          title: const Text(
+            "Leilão",
+            style: TextStyle(color: AppColors.white, fontSize: 20),
+          ),
+          centerTitle: true,
+        ),
+        drawer: Drawer(
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(image: AssetImage("image/degrade.png"), fit: BoxFit.cover),
+            ),
+            child: ListView(
+              padding: EdgeInsets.zero, // Removendo o padding
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(right: 250),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      size: 40,
+                      color: AppColors.white,
+                    ),
+                  ),
+                ),
+                const UserAccountsDrawerHeader(
+                  accountName: Text("Pedro Lucas"),
+                  accountEmail: Text("lucaspedro312@email.com"),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundImage: AssetImage("image/avatar.png"),
+                  ),
+                  decoration: BoxDecoration(color: AppColors.black),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Leilao(),
+                      ),
+                    );
+                  },
+                  leading: Image.asset(
+                    "image/assets/icons/leiloes.png",
+                    color: AppColors.white,
+                  ),
+                  title: const Text(
+                    "Leilão",
+                    style: TextStyle(color: AppColors.white, fontSize: 16),
+                  ),
+                ),
+                ListTile(
+                  leading: Image.asset(
+                    "image/assets/icons/vendaDireta.png",
+                    color: AppColors.white,
+                  ),
+                  title: const Text(
+                    "Venda Direta",
+                    style: TextStyle(color: AppColors.white, fontSize: 16),
+                  ),
+                ),
+                ListTile(
+                  leading: Image.asset(
+                    "image/assets/icons/resultados.png",
+                    color: AppColors.white,
+                  ),
+                  title: const Text(
+                    "Resultados",
+                    style: TextStyle(color: AppColors.white, fontSize: 16),
+                  ),
+                ),
+                ExpansionTile(
+                  leading: Image.asset(
+                    "image/assets/icons/settings.png",
+                    color: AppColors.white,
+                  ),
+                  title: const Text(
+                    "Configurações",
+                    style: TextStyle(color: AppColors.white, fontSize: 16),
+                  ),
+                  trailing: const Icon(
+                    Icons.keyboard_arrow_down_sharp,
+                    color: AppColors.white,
+                  ),
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(left: 47),
+                      child: ListTile(
+                        title: const Text(
+                          "Perfil",
+                          style: TextStyle(color: AppColors.white, fontSize: 18),
+                        ),
+                        onTap: () {
+                          // Ação quando a Opção 1 é selecionada
+                        },
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 47),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ListTile(
+                            title: const Text(
+                              "Políticas de ",
+                              style: TextStyle(color: AppColors.white, fontSize: 18),
+                            ),
+                            onTap: () {
+                              // Ação quando a Opção 2 é selecionada
+                            },
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 14),
+                            child: const Text(
+                              "privacidade",
+                              style: TextStyle(color: AppColors.white, fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 47),
+                      child: ListTile(
+                        title: const Text(
+                          "Ajuda",
+                          style: TextStyle(color: AppColors.white, fontSize: 18),
+                        ),
+                        onTap: () {
+                          // Ação quando a Opção 1 é selecionada
+                        },
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 47),
+                      child: ListTile(
+                        title: const Text(
+                          "Sair",
+                          style: TextStyle(color: AppColors.white, fontSize: 18),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Login(),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: AppColors.appBar,
+          items: const [
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage(
+                  "image/assets/icons/leiloes.png",
+                ),
+                color: AppColors.white,
+              ),
+              label: "Leilões",
+            ),
+            BottomNavigationBarItem(
+                icon: ImageIcon(
+                  AssetImage(
+                    "image/assets/icons/vendaDireta.png",
+                  ),
+                  color: AppColors.white,
+                ),
+                label: "Venda Direta",
+                backgroundColor: AppColors.white),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage("image/assets/icons/resultados.png"),
+                color: AppColors.white,
+              ),
+              label: "Resultados",
+            ),
+          ],
+        ),
       ),
     );
   }
