@@ -2,7 +2,7 @@ enum Routers {
   cadastro,
   login,
   apresentacao,
-  vendaDireta // Adicionando a rotas para a telas
+  vendaDireta, // Adicionando a rotas para a telas
 }
 
 extension RoutersExtension on Routers {

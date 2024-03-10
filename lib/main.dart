@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/leilao.dart';
 import 'package:leilao_teste_dix/router/path.dart';
 import 'apresentacao.dart';
 import 'login.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routers.vendaDireta.name, //Definir a tela de venda direta como inicial
+      home: const Leilao(),
+      // initialRoute: Routers.vendaDireta.name, //Definir a tela de venda direta como inicial
       // initialRoute: Routers.apresentacao.name, // Definir a tela de apresentação como inicial
       routes: {
         Routers.apresentacao.name: (_) => const Apresentacao(),

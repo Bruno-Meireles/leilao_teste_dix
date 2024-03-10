@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/utils/app.colors.dart';
 
 class Apresentacao extends StatefulWidget {
   const Apresentacao({super.key});
@@ -52,7 +53,7 @@ class _ApresentacaoState extends State<Apresentacao> {
               child: Text(
                 "Leilões online para rematar seu gado com praticidade",
                 style: TextStyle(
-                  color: Color(0xffFFFFFF),
+                  color: AppColors.white,
                   fontSize: 16,
                 ),
               ),
@@ -60,7 +61,7 @@ class _ApresentacaoState extends State<Apresentacao> {
             Column(
               children: [
                 const CircularProgressIndicator(
-                  color: Colors.white38,
+                  color: AppColors.circular,
                 ),
                 TextButton(
                   onPressed: () {},
@@ -72,7 +73,7 @@ class _ApresentacaoState extends State<Apresentacao> {
                 const Text(
                   "V 2.0.0.1",
                   style: TextStyle(
-                    color: Color(0xffFFFFFF),
+                    color: AppColors.white,
                     fontSize: 10,
                   ),
                 ),

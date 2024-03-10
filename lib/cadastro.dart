@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/utils/app.colors.dart';
 import 'components/form.dart';
 
 class Cadastro extends StatelessWidget {
@@ -13,7 +14,7 @@ class Cadastro extends StatelessWidget {
     final confirmarSenhaControler = TextEditingController();
 
     return Scaffold(
-      backgroundColor: const Color(0xff222222),
+      backgroundColor: AppColors.backgoundColor,
       appBar: AppBar(
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -25,7 +26,7 @@ class Cadastro extends StatelessWidget {
             "Criar Conta",
             style: TextStyle(
               fontFamily: "Poppins",
-              color: Color(0xffFFFFFF),
+              color: AppColors.white,
             ),
           ),
         ),
@@ -87,24 +88,30 @@ class Cadastro extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.check_box_outline_blank,
-                        color: Color(0xffAE841A),
+                        color: AppColors.yellow,
                       ),
                       Text(
                         "  Ao criar sua conta você concorda com os ",
-                        style: TextStyle(
-                          color: Color(0xffFFFFFF),
-                        ),
+                        style: TextStyle(color: AppColors.white, fontSize: 13),
                       ),
                       Text(
-                        "        Termos de Uso e Politica de Privacidade",
-                        style: TextStyle(color: Color(0xffFFFFFF)),
+                        "         Termos de Uso ",
+                        style: TextStyle(color: AppColors.blue, fontSize: 13),
+                      ),
+                      Text(
+                        "e",
+                        style: TextStyle(color: AppColors.white, fontSize: 13),
+                      ),
+                      Text(
+                        " Politica de Privacidade",
+                        style: TextStyle(color: AppColors.blue, fontSize: 13),
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 56),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -115,14 +122,14 @@ class Cadastro extends StatelessWidget {
                     ),
                   ),
                   padding: const EdgeInsets.all(20),
-                  backgroundColor: const Color(0xff008800),
+                  backgroundColor: AppColors.green,
                 ),
                 onPressed: () {},
                 child: const Text(
                   "Criar Conta",
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.white,
+                    color: AppColors.white,
                   ),
                 ),
               ),

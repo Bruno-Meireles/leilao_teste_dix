@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/utils/app.colors.dart';
 
 class Leilao extends StatefulWidget {
   const Leilao({super.key});
@@ -10,8 +11,15 @@ class Leilao extends StatefulWidget {
 class _LeilaoState extends State<Leilao> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("olá tela leilão"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Leilão"),
+      ),
+      drawer: Drawer(
+        child: ListView(children: [
+          
+        ],),
+      ),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:leilao_teste_dix/apresentacao.dart';
 import 'package:leilao_teste_dix/cadastro.dart';
 import 'package:leilao_teste_dix/router/path.dart';
+import 'package:leilao_teste_dix/utils/app.colors.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -41,9 +42,9 @@ class _LoginState extends State<Login> {
             ),
             const Text(
               "Entrar",
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: AppColors.white, fontSize: 20),
             ),
-            const Text("Informe os dados para acessar", style: TextStyle(color: Colors.white)),
+            const Text("Informe os dados para acessar", style: TextStyle(color: AppColors.white)),
             const SizedBox(
               height: 20,
             ),
@@ -53,7 +54,7 @@ class _LoginState extends State<Login> {
             const Text(
               " Email",
               style: TextStyle(
-                color: Color(0xffFFFFFF),
+                color: AppColors.white,
                 fontSize: 16,
               ),
             ),
@@ -67,7 +68,7 @@ class _LoginState extends State<Login> {
                 filled: true,
                 hintText: "Informe seu E-mail",
                 hintStyle: TextStyle(
-                  color: Color(0xff2D2D2D),
+                  color: AppColors.hintText,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
@@ -82,7 +83,7 @@ class _LoginState extends State<Login> {
             const Text(
               " Senha",
               style: TextStyle(
-                color: Color(0xffFFFFFF),
+                color: AppColors.white,
                 fontSize: 16,
               ),
             ),
@@ -93,11 +94,11 @@ class _LoginState extends State<Login> {
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: const InputDecoration(
-                fillColor: Color(0xffFFFFFF),
+                fillColor: AppColors.white,
                 filled: true,
                 hintText: "********",
                 hintStyle: TextStyle(
-                  color: Color(0xff2D2D2D),
+                  color: AppColors.hintText,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
@@ -113,7 +114,10 @@ class _LoginState extends State<Login> {
                 onPressed: () {},
                 child: const Text(
                   "Esqueceu sua senha ?",
-                  style: TextStyle(fontSize: 13, color: Color(0xff659AFF)),
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: AppColors.blue,
+                  ),
                 ),
               ),
             ),
@@ -129,13 +133,13 @@ class _LoginState extends State<Login> {
               style: ElevatedButton.styleFrom(
                 shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(7))),
                 padding: const EdgeInsets.all(20),
-                backgroundColor: const Color(0xffAE841A),
+                backgroundColor: AppColors.yellow,
               ),
               child: const Text(
                 "Entrar",
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.white,
+                  color: AppColors.white,
                 ),
               ),
             ),
@@ -153,16 +157,16 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 padding: const EdgeInsets.all(20),
-                backgroundColor: const Color(0xff222222),
+                backgroundColor: AppColors.backgoundColor,
                 side: const BorderSide(
-                  color: Color(0xffFFFFFF),
+                  color: AppColors.white,
                 ),
               ),
               child: const Text(
                 "Criar Conta",
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.white,
+                  color: AppColors.white,
                 ),
               ),
             ),
@@ -184,7 +188,7 @@ class _LoginState extends State<Login> {
                 const Text(
                   "V 2.0.0.1",
                   style: TextStyle(
-                    color: Color(0xffFFFFFF),
+                    color: AppColors.white,
                     fontSize: 10,
                   ),
                 ),
