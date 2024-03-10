@@ -10,6 +10,7 @@ class Leilao extends StatefulWidget {
 }
 
 class _LeilaoState extends State<Leilao> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -179,7 +180,29 @@ class _LeilaoState extends State<Leilao> {
             ),
           ),
         ),
+        body: Card(
+          margin: const EdgeInsets.all(20),
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Image.asset("image/gadoCorte.png"),
+              ),
+              const Text(
+                "LEILÃO GADO CORTE 174",
+                style: TextStyle(fontSize: 12.68),
+              ),
+            ],
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          unselectedItemColor: AppColors.white,
+          selectedItemColor: AppColors.yellow,
+          currentIndex: currentIndex,
+          onTap: (index) => setState(
+            () => currentIndex = index,
+          ),
           backgroundColor: AppColors.appBar,
           items: const [
             BottomNavigationBarItem(
