@@ -13,4 +13,5 @@ class AppColors {
   static const Color hintText = Color(0xff2D2D2D);
   static const Color blue = Color(0xff659AFF);
   static const Color circular = Color(0xFFFFFFFF);
+  static const Color miniIcon = Color(0xff585858);
 }

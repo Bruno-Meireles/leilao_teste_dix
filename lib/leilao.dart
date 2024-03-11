@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:leilao_teste_dix/login.dart';
 import 'package:leilao_teste_dix/utils/app.colors.dart';
@@ -180,20 +182,80 @@ class _LeilaoState extends State<Leilao> {
             ),
           ),
         ),
-        body: Card(
-          margin: const EdgeInsets.all(20),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: Image.asset("image/gadoCorte.png"),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Conteúdo existente do corpo
+            SizedBox(
+              width: 351,
+              height: 171.14,
+              child: Card(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Image.asset("image/gadoCorte.png"),
+                          ),
+                          SizedBox(
+                            child: Expanded(
+                              child: Row(
+                                children: [
+                                  Image.asset("image/assets/icons/iconLocation.png"),
+                                  const Text("LEILÃO GADO CORTE 174"),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              const Text(
-                "LEILÃO GADO CORTE 174",
-                style: TextStyle(fontSize: 12.68),
+            ),
+            // Nova seção abaixo do corpo existente
+            const Padding(
+              padding: EdgeInsets.all(15),
+              child: Center(
+                child: Text(
+                  'Próximos Leilões',
+                  style: TextStyle(fontSize: 16, color: AppColors.white),
+                ),
               ),
-            ],
-          ),
+            ),
+            Center(
+              child: Card(
+                child: Column(
+                  children: [
+                    Image.asset("image/leilaoGado.png"),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.yellow,
+                        foregroundColor: AppColors.white,
+                        fixedSize: const Size(280, 47),
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.zero),
+                        ),
+                      ),
+                      child: const Text("10 FEV.2023 às 19:00"),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      ("LEILÃO VIRTUAL GADO DE CORTE - lote 175"),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+            // Adicione outros widgets ou conteúdo conforme necessário
+          ],
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,

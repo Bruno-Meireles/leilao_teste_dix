@@ -21,18 +21,18 @@ class _VendaDiretaState extends State<VendaDireta> {
           backgroundColor: AppColors.black,
           foregroundColor: AppColors.white,
           title: const Text(
-            "Leilão",
+            "Venda Direta",
             style: TextStyle(color: AppColors.white, fontSize: 20),
           ),
           centerTitle: true,
           actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.filter_alt_rounded))],
         ),
+        // inicio menu hamburguer
         drawer: Drawer(
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(image: AssetImage("image/degrade.png"), fit: BoxFit.cover),
             ),
-            // inicio menu hamburguer
             child: ListView(
               padding: EdgeInsets.zero, // Removendo o padding
               children: [
@@ -183,23 +183,54 @@ class _VendaDiretaState extends State<VendaDireta> {
             ),
           ),
         ),
+
+        // fim menu hamburguer drawer
+
+        // inicio gridview com imagems e titulos do leilão
         body: GridView.builder(
-            itemCount: 8,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-            itemBuilder: (BuildContext context, int index) {
-              return Container(
-                padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.all(12),
-                width: 173,
-                height: 285,
-                child: Column(
-                  children: [
-                    Image.asset("image/imageNovilha/novilha.png"),
-                    const Text("oi"),
-                  ],
+          itemCount: 8,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColors.white),
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(6),
                 ),
-              );
-            }),
+              ),
+              width: 351,
+              height: 269,
+              margin: const EdgeInsets.all(4),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: Expanded(
+                      child: Image.asset(
+                        "image/imageNovilha/novilha.png",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  const Text(
+                    "Lote Novilha B021...",
+                    style: TextStyle(color: AppColors.white, fontSize: 14),
+                  ),
+                  const Column(
+                    children: [
+                      ListTile(
+                        leading: ImageIcon(
+                          AssetImage("image/assets/icons/iconFemeas.png"),
+                        ),
+                        title: Text("Fêmeas"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           unselectedItemColor: AppColors.white,

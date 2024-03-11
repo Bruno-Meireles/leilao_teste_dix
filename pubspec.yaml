@@ -24,7 +24,7 @@ flutter:
   assets:
     - image/assets/icons/
     - image/imageNovilha/
-    - image\degrade.png
+    - image/degrade.png
     - image/logo.cadastro.png
     - image/Logo-dix_branca.png
     - image/background.logo.png
@@ -38,5 +38,10 @@ flutter:
     - image/assets/icons/settings.png
     - image/gadoCorte.png
     - image/assets/icons/TimeSquare.png
-    - image\assets\icons\Location.png
-    - image\leilaoGado.png
+    - image/assets/icons/Location.png
+    - image/leilaoGado.png
+    - image/assets/icons/iconFemeas.png
+    - image/assets/icons/iconLocation.png
+    - image/assets/icons/iconPeso.png
+    - image/assets/icons/location.png
+    - image/assets/icons/TimeSquare.png
