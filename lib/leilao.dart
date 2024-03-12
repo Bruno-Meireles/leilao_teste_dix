@@ -1,8 +1,8 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:leilao_teste_dix/login.dart';
+import 'package:leilao_teste_dix/resultados.dart';
 import 'package:leilao_teste_dix/utils/app.colors.dart';
+import 'package:leilao_teste_dix/venda.direta.dart';
 
 class Leilao extends StatefulWidget {
   const Leilao({super.key});
@@ -78,6 +78,14 @@ class _LeilaoState extends State<Leilao> {
                   ),
                 ),
                 ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VendaDireta(),
+                      ),
+                    );
+                  },
                   leading: Image.asset(
                     "image/assets/icons/vendaDireta.png",
                     color: AppColors.white,
@@ -88,6 +96,14 @@ class _LeilaoState extends State<Leilao> {
                   ),
                 ),
                 ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Resultados(),
+                      ),
+                    );
+                  },
                   leading: Image.asset(
                     "image/assets/icons/resultados.png",
                     color: AppColors.white,
@@ -228,33 +244,56 @@ class _LeilaoState extends State<Leilao> {
             ),
             Center(
               child: Card(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(6),
+                    bottom: Radius.circular(6),
+                  ),
+                ),
                 child: Column(
                   children: [
                     Image.asset("image/leilaoGado.png"),
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.yellow,
-                        foregroundColor: AppColors.white,
-                        fixedSize: const Size(280, 47),
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.zero),
-                        ),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.zero),
+                          ),
+                          fixedSize: const Size(281, 57),
+                          backgroundColor: AppColors.yellow),
+                      child: const Text(
+                        "10 FEV.2023 às 19:00",
+                        style: TextStyle(color: AppColors.white, fontSize: 14.43),
                       ),
-                      child: const Text("10 FEV.2023 às 19:00"),
                     ),
                     SizedBox(
-                      height: 30,
+                      width: 281,
+                      height: 55,
+                      child: Row(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(
+                                    bottom: Radius.circular(6),
+                                  ),
+                                ),
+                                fixedSize: const Size(281, 57),
+                                backgroundColor: AppColors.black),
+                            child: const Text(
+                              "LEILÃO VIRTUAL GADO DE CORTE - Lote 175",
+                              style: TextStyle(color: AppColors.white, fontSize: 14.43),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    Text(
-                      ("LEILÃO VIRTUAL GADO DE CORTE - lote 175"),
-                    )
                   ],
                 ),
               ),
             ),
-
-            // Adicione outros widgets ou conteúdo conforme necessário
+            // Column()
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

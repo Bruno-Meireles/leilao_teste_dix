@@ -2,7 +2,8 @@ enum Routers {
   cadastro,
   login,
   apresentacao,
-  vendaDireta, // Adicionando a rotas para a telas
+  vendaDireta,
+  leilao // Adicionando a rotas para a telas
 }
 
 extension RoutersExtension on Routers {
@@ -16,6 +17,8 @@ extension RoutersExtension on Routers {
         return 'apresentacao';
       case Routers.vendaDireta: // Definindo o nome da rota para as telas
         return 'vendaDireta';
+      case Routers.leilao: // Definindo o nome da rota para as telas
+        return 'leilao';
     }
   }
 }

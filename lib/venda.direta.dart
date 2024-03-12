@@ -25,8 +25,14 @@ class _VendaDiretaState extends State<VendaDireta> {
             style: TextStyle(color: AppColors.white, fontSize: 20),
           ),
           centerTitle: true,
-          actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.filter_alt_rounded))],
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.filter_alt_rounded),
+            ),
+          ],
         ),
+
         // inicio menu hamburguer
         drawer: Drawer(
           child: Container(
@@ -187,49 +193,143 @@ class _VendaDiretaState extends State<VendaDireta> {
         // fim menu hamburguer drawer
 
         // inicio gridview com imagems e titulos do leilão
-        body: GridView.builder(
-          itemCount: 8,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColors.white),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(6),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 20, left: 6, right: 6),
+          child: GridView.builder(
+            itemCount: 8,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 2, mainAxisExtent: 351, mainAxisSpacing: 25),
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.miniIcon),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(6),
+                  ),
                 ),
-              ),
-              width: 351,
-              height: 269,
-              margin: const EdgeInsets.all(4),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Expanded(
+                margin: const EdgeInsets.all(1),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
                       child: Image.asset(
                         "image/imageNovilha/novilha.png",
                         fit: BoxFit.cover,
                       ),
                     ),
-                  ),
-                  const Text(
-                    "Lote Novilha B021...",
-                    style: TextStyle(color: AppColors.white, fontSize: 14),
-                  ),
-                  const Column(
-                    children: [
-                      ListTile(
-                        leading: ImageIcon(
-                          AssetImage("image/assets/icons/iconFemeas.png"),
-                        ),
-                        title: Text("Fêmeas"),
+                    const Text(
+                      "Lote Novilha B021...",
+                      style: TextStyle(color: AppColors.white, fontSize: 14),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 33, top: 5),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "image/assets/icons/iconFemeas.png",
+                            color: AppColors.miniIcon,
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text(
+                            "Fêmeas",
+                            style: TextStyle(color: AppColors.white, fontSize: 12),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ],
-              ),
-            );
-          },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 33, top: 5),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "image/assets/icons/iconPeso.png",
+                            color: AppColors.miniIcon,
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text(
+                            "194 KG / 6.46@",
+                            style: TextStyle(color: AppColors.white, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 33, top: 5),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "image/assets/icons/iconLocation.png",
+                            color: AppColors.miniIcon,
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text(
+                            "Pium - TO",
+                            style: TextStyle(color: AppColors.white, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 33, top: 5),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                    shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(7),
+                                      ),
+                                    ),
+                                    side: const BorderSide(color: AppColors.yellow),
+                                    backgroundColor: AppColors.backgoundColor),
+                                child: const Text(
+                                  "Compartilhar",
+                                  style: TextStyle(color: AppColors.yellow),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              right: 30,
+                            ),
+                            child: Positioned(
+                              bottom: 50,
+                              left: 10,
+                              right: 50,
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                    shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(7),
+                                      ),
+                                    ),
+                                    backgroundColor: AppColors.green),
+                                child: const Text(
+                                  "Compartilhar",
+                                  style: TextStyle(color: AppColors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
