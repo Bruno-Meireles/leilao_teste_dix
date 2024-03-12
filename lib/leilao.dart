@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:leilao_teste_dix/login.dart';
 import 'package:leilao_teste_dix/resultados.dart';
 import 'package:leilao_teste_dix/utils/app.colors.dart';
@@ -198,41 +199,83 @@ class _LeilaoState extends State<Leilao> {
             ),
           ),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: ListView(
+          shrinkWrap: true,
           children: [
-            // Conteúdo existente do corpo
-            SizedBox(
-              width: 351,
-              height: 171.14,
+            Padding(
+              padding: const EdgeInsets.only(top: 25, left: 5, right: 5),
               child: Card(
                 child: Row(
                   children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Image.asset("image/gadoCorte.png"),
-                          ),
-                          SizedBox(
-                            child: Expanded(
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Image.asset("image/gadoCorte.png"),
+                        ),
+                        Column(
+                          children: [
+                            const Text(
+                              "   LEILÃO GADO CORTE 174",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(4),
                               child: Row(
                                 children: [
-                                  Image.asset("image/assets/icons/iconLocation.png"),
-                                  const Text("LEILÃO GADO CORTE 174"),
+                                  Image.asset(
+                                    "image/assets/icons/Location.png",
+                                  ),
+                                  const Text(
+                                    "Belo Horizonte - MG",
+                                    style: TextStyle(fontSize: 10.3),
+                                  ),
                                 ],
                               ),
                             ),
-                          ),
-                        ],
-                      ),
+                            Row(
+                              children: [
+                                Image.asset("image/assets/icons/TimeSquare.png"),
+                                const Text(
+                                  "17:00 (horário de Brasília)",
+                                  style: TextStyle(fontSize: 10.3),
+                                ),
+                              ],
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.all(12),
+                              child: Text(
+                                "Clique e assista esse leilão agora!",
+                                style: TextStyle(fontSize: 7.92),
+                              ),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(3.96),
+                                    ),
+                                  ),
+                                  backgroundColor: AppColors.vermelho),
+                              child: const Row(
+                                children: [
+                                  Icon(Icons.play_arrow, color: AppColors.white),
+                                  Text(
+                                    "Assistir",
+                                    style: TextStyle(color: AppColors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
             ),
-            // Nova seção abaixo do corpo existente
             const Padding(
               padding: EdgeInsets.all(15),
               child: Center(
@@ -242,56 +285,96 @@ class _LeilaoState extends State<Leilao> {
                 ),
               ),
             ),
-            Center(
-              child: Card(
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(6),
-                    bottom: Radius.circular(6),
+            Column(
+              children: [
+                Image.asset("image/leilaoGado.png"),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero),
+                      ),
+                      fixedSize: const Size(281, 57),
+                      backgroundColor: AppColors.yellow),
+                  child: const Text(
+                    "10 FEV.2023 às 19:00",
+                    style: TextStyle(color: AppColors.white, fontSize: 14.43),
                   ),
                 ),
-                child: Column(
-                  children: [
-                    Image.asset("image/leilaoGado.png"),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.zero),
-                          ),
-                          fixedSize: const Size(281, 57),
-                          backgroundColor: AppColors.yellow),
-                      child: const Text(
-                        "10 FEV.2023 às 19:00",
-                        style: TextStyle(color: AppColors.white, fontSize: 14.43),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 281,
-                      height: 55,
-                      child: Row(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                                shape: const RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.vertical(
-                                    bottom: Radius.circular(6),
-                                  ),
-                                ),
-                                fixedSize: const Size(281, 57),
-                                backgroundColor: AppColors.black),
-                            child: const Text(
-                              "LEILÃO VIRTUAL GADO DE CORTE - Lote 175",
-                              style: TextStyle(color: AppColors.white, fontSize: 14.43),
+                SizedBox(
+                  width: 281,
+                  // height: 55,
+                  child: Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                bottom: Radius.circular(6),
+                              ),
                             ),
-                          ),
-                        ],
+                            fixedSize: const Size(281, 57),
+                            backgroundColor: AppColors.black),
+                        child: const Text(
+                          "LEILÃO VIRTUAL GADO DE CORTE - Lote 175",
+                          style: TextStyle(color: AppColors.white, fontSize: 14.43),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  Image.asset("image/lote303.png"),
+                  const SizedBox(
+                    height: 1,
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                Image.asset("image/lote303.png"),
+                const SizedBox(
+                  height: 12,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset("image/lote303.png"),
+                const SizedBox(
+                  height: 12,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset("image/lote303.png"),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(7),
                       ),
                     ),
-                  ],
+                    backgroundColor: AppColors.yellow,
+                  ),
+                  child: const Text(
+                    "Ver mais lotes",
+                    style: TextStyle(color: AppColors.white, fontSize: 13.36),
+                  ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
@@ -365,7 +448,14 @@ class _LeilaoState extends State<Leilao> {
                 backgroundColor: AppColors.white),
             BottomNavigationBarItem(
               icon: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const VendaDireta(),
+                    ),
+                  );
+                },
                 child: const ImageIcon(
                   AssetImage("image/assets/icons/resultados.png"),
                   color: AppColors.white,

@@ -14,4 +14,5 @@ class AppColors {
   static const Color blue = Color(0xff659AFF);
   static const Color circular = Color(0xFFFFFFFF);
   static const Color miniIcon = Color(0xff585858);
+  static const Color vermelho = Color(0xffC82323);
 }

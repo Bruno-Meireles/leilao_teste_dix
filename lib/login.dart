@@ -42,9 +42,19 @@ class _LoginState extends State<Login> {
             ),
             const Text(
               "Entrar",
-              style: TextStyle(color: AppColors.white, fontSize: 20),
+              style: TextStyle(
+                color: AppColors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            const Text("Informe os dados para acessar", style: TextStyle(color: AppColors.white)),
+            const Text(
+              "Informe os dados para acessar",
+              style: TextStyle(
+                color: AppColors.white,
+                fontSize: 15,
+              ),
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -66,9 +76,11 @@ class _LoginState extends State<Login> {
               decoration: const InputDecoration(
                 fillColor: Color(0xffFFFFFF),
                 filled: true,
-                hintText: "Informe seu E-mail",
+                hintText: "email@example.com",
                 hintStyle: TextStyle(
+                  fontSize: 14,
                   color: AppColors.hintText,
+                  fontWeight: FontWeight.w300,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
@@ -97,9 +109,7 @@ class _LoginState extends State<Login> {
                 fillColor: AppColors.white,
                 filled: true,
                 hintText: "********",
-                hintStyle: TextStyle(
-                  color: AppColors.hintText,
-                ),
+                hintStyle: TextStyle(fontWeight: FontWeight.w300, letterSpacing: 2, color: AppColors.hintText, fontSize: 20),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(7),
@@ -108,7 +118,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             Container(
-              height: 30,
+              height: 35,
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {},
@@ -131,7 +141,11 @@ class _LoginState extends State<Login> {
                 }
               },
               style: ElevatedButton.styleFrom(
-                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(7))),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(7),
+                  ),
+                ),
                 padding: const EdgeInsets.all(20),
                 backgroundColor: AppColors.yellow,
               ),
@@ -148,7 +162,11 @@ class _LoginState extends State<Login> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Cadastro()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const Cadastro(),
+                  ),
+                );
               },
               style: ElevatedButton.styleFrom(
                 shape: const RoundedRectangleBorder(

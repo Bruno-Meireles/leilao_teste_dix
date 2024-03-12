@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:leilao_teste_dix/leilao.dart';
 import 'package:leilao_teste_dix/utils/app.colors.dart';
 import 'components/form.dart';
-import 'router/path.dart';
 
 class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
@@ -18,8 +18,6 @@ class _CadastroState extends State<Cadastro> {
     final celularControler = TextEditingController();
     final senhaControler = TextEditingController();
     final confirmarSenhaControler = TextEditingController();
-    String email = "";
-    String password = "";
     bool isChecked = false;
 
     return Scaffold(
@@ -137,22 +135,17 @@ class _CadastroState extends State<Cadastro> {
                   backgroundColor: AppColors.green,
                 ),
                 onPressed: () {
-                  if (email == 'fabioln@ldix.com' && password == '1234567o') {
-                    Navigator.pushNamed(context, Routers.leilao.name);
-                  }
-                },
-                child: GestureDetector(
-                  onTap: () {
-                    if (email == 'fabioln@ldix.com' && password == '1234567o') {
-                      Navigator.pushNamed(context, Routers.leilao.name);
-                    }
-                  },
-                  child: const Text(
-                    "Criar Conta",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: AppColors.white,
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const Leilao(),
                     ),
+                  );
+                },
+                child: const Text(
+                  "Criar Conta",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: AppColors.white,
                   ),
                 ),
               ),

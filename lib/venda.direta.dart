@@ -208,7 +208,7 @@ class _VendaDiretaState extends State<VendaDireta> {
                 ),
                 margin: const EdgeInsets.all(1),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
                       width: double.infinity,
@@ -275,55 +275,45 @@ class _VendaDiretaState extends State<VendaDireta> {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 33, top: 5),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    shape: const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(7),
-                                      ),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  fixedSize: const Size(152, 41),
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8),
                                     ),
-                                    side: const BorderSide(color: AppColors.yellow),
-                                    backgroundColor: AppColors.backgoundColor),
-                                child: const Text(
-                                  "Compartilhar",
-                                  style: TextStyle(color: AppColors.yellow),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              right: 30,
-                            ),
-                            child: Positioned(
-                              bottom: 50,
-                              left: 10,
-                              right: 50,
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    shape: const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(7),
-                                      ),
-                                    ),
-                                    backgroundColor: AppColors.green),
-                                child: const Text(
-                                  "Compartilhar",
-                                  style: TextStyle(color: AppColors.white),
-                                ),
+                                  ),
+                                  side: const BorderSide(color: AppColors.yellow),
+                                  backgroundColor: AppColors.backgoundColor),
+                              child: const Text(
+                                "Compartilhar",
+                                style: TextStyle(color: AppColors.yellow),
                               ),
                             ),
+                          ],
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              fixedSize: const Size(152, 41),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(8),
+                                ),
+                              ),
+                              backgroundColor: AppColors.green),
+                          child: const Text(
+                            "Dê o seu lance",
+                            style: TextStyle(color: AppColors.white, fontSize: 13),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
