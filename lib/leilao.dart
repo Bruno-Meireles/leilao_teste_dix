@@ -293,7 +293,6 @@ class _LeilaoState extends State<Leilao> {
                 ),
               ),
             ),
-            // Column()
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -305,29 +304,72 @@ class _LeilaoState extends State<Leilao> {
             () => currentIndex = index,
           ),
           backgroundColor: AppColors.appBar,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage(
-                  "image/assets/icons/leiloes.png",
+              icon: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Leilao(),
+                    ),
+                  );
+                },
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Leilao(),
+                      ),
+                    );
+                  },
+                  child: const ImageIcon(
+                    AssetImage(
+                      "image/assets/icons/leiloes.png",
+                    ),
+                    color: AppColors.white,
+                  ),
                 ),
-                color: AppColors.white,
               ),
               label: "Leilões",
             ),
             BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage(
-                    "image/assets/icons/vendaDireta.png",
+                icon: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VendaDireta(),
+                      ),
+                    );
+                  },
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const VendaDireta(),
+                        ),
+                      );
+                    },
+                    child: const ImageIcon(
+                      AssetImage(
+                        "image/assets/icons/vendaDireta.png",
+                      ),
+                      color: AppColors.white,
+                    ),
                   ),
-                  color: AppColors.white,
                 ),
                 label: "Venda Direta",
                 backgroundColor: AppColors.white),
             BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("image/assets/icons/resultados.png"),
-                color: AppColors.white,
+              icon: GestureDetector(
+                onTap: () {},
+                child: const ImageIcon(
+                  AssetImage("image/assets/icons/resultados.png"),
+                  color: AppColors.white,
+                ),
               ),
               label: "Resultados",
             ),

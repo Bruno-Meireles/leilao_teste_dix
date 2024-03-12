@@ -11,7 +11,7 @@ class _ResultadosState extends State<Resultados> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text("olá tela resultados"),
+      body: Center(child: Text("olá tela resultados")),
     );
   }
 }

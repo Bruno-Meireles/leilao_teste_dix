@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:leilao_teste_dix/utils/app.colors.dart';
 import 'components/form.dart';
+import 'router/path.dart';
 
-class Cadastro extends StatelessWidget {
+class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
 
+  @override
+  State<Cadastro> createState() => _CadastroState();
+}
+
+class _CadastroState extends State<Cadastro> {
   @override
   Widget build(BuildContext context) {
     final nameControler = TextEditingController();
@@ -12,15 +18,14 @@ class Cadastro extends StatelessWidget {
     final celularControler = TextEditingController();
     final senhaControler = TextEditingController();
     final confirmarSenhaControler = TextEditingController();
+    String email = "";
+    String password = "";
+    bool isChecked = false;
 
     return Scaffold(
       backgroundColor: AppColors.backgoundColor,
       appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(image: AssetImage("image/appbar.png"), fit: BoxFit.cover),
-          ),
-        ),
+        backgroundColor: AppColors.black,
         title: const Center(
           child: Text(
             "Criar Conta",
@@ -81,28 +86,35 @@ class Cadastro extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Center(
+            Center(
               child: Column(
                 children: [
                   Wrap(
                     children: [
-                      Icon(
-                        Icons.check_box_outline_blank,
-                        color: AppColors.yellow,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isChecked = !isChecked;
+                          });
+                        },
+                        child: const Icon(
+                          Icons.check_box_outline_blank,
+                          color: AppColors.yellow,
+                        ),
                       ),
-                      Text(
+                      const Text(
                         "  Ao criar sua conta você concorda com os ",
                         style: TextStyle(color: AppColors.white, fontSize: 13),
                       ),
-                      Text(
+                      const Text(
                         "         Termos de Uso ",
                         style: TextStyle(color: AppColors.blue, fontSize: 13),
                       ),
-                      Text(
+                      const Text(
                         "e",
                         style: TextStyle(color: AppColors.white, fontSize: 13),
                       ),
-                      Text(
+                      const Text(
                         " Politica de Privacidade",
                         style: TextStyle(color: AppColors.blue, fontSize: 13),
                       ),
@@ -124,12 +136,23 @@ class Cadastro extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   backgroundColor: AppColors.green,
                 ),
-                onPressed: () {},
-                child: const Text(
-                  "Criar Conta",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: AppColors.white,
+                onPressed: () {
+                  if (email == 'fabioln@ldix.com' && password == '1234567o') {
+                    Navigator.pushNamed(context, Routers.leilao.name);
+                  }
+                },
+                child: GestureDetector(
+                  onTap: () {
+                    if (email == 'fabioln@ldix.com' && password == '1234567o') {
+                      Navigator.pushNamed(context, Routers.leilao.name);
+                    }
+                  },
+                  child: const Text(
+                    "Criar Conta",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: AppColors.white,
+                    ),
                   ),
                 ),
               ),
