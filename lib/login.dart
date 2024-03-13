@@ -137,7 +137,7 @@ class _LoginState extends State<Login> {
             ElevatedButton(
               onPressed: () {
                 if (email == 'fabioln@ldix.com' && password == '1234567o') {
-                  Navigator.pushNamed(context, Routers.cadastro.name);
+                  Navigator.pushNamed(context, Routers.vendaDireta.name);
                 }
               },
               style: ElevatedButton.styleFrom(

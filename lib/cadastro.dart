@@ -47,6 +47,7 @@ class _CadastroState extends State<Cadastro> {
               hintText: "Informe seu Nome completo",
               keyboardType: TextInputType.text,
               controller: nameControler,
+           
             ),
             const SizedBox(
               height: 20,
@@ -56,12 +57,14 @@ class _CadastroState extends State<Cadastro> {
               labelText: "E-mail",
               hintText: "Informe seu E-mail",
               controller: emailControler,
+            
             ),
             CustomTextFormField(
               key: UniqueKey(),
               labelText: "Celular",
               hintText: "Informe seu Celular",
               controller: celularControler,
+            
             ),
             const SizedBox(
               height: 20,
@@ -70,6 +73,7 @@ class _CadastroState extends State<Cadastro> {
               key: UniqueKey(),
               labelText: "Senha",
               hintText: "Informe sua Senha",
+              
               controller: senhaControler,
             ),
             const SizedBox(
@@ -79,6 +83,7 @@ class _CadastroState extends State<Cadastro> {
               key: UniqueKey(),
               labelText: "Senha",
               hintText: "Confirmar senha",
+              
               controller: confirmarSenhaControler,
             ),
             const SizedBox(

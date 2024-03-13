@@ -6,6 +6,7 @@ class CustomTextFormField extends StatefulWidget {
 
   final TextInputType keyboardType;
   final TextEditingController controller;
+
   final bool obscureText;
 
   const CustomTextFormField({
