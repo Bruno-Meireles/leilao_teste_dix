@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:leilao_teste_dix/login.dart';
 import 'package:leilao_teste_dix/resultados.dart';
 import 'package:leilao_teste_dix/utils/app.colors.dart';
@@ -339,7 +338,7 @@ class _LeilaoState extends State<Leilao> {
             ),
             Column(
               children: [
-                Image.asset("image/lote303.png"),
+                Image.asset("image/lote175.png"),
                 const SizedBox(
                   height: 12,
                 ),
@@ -347,7 +346,7 @@ class _LeilaoState extends State<Leilao> {
             ),
             Column(
               children: [
-                Image.asset("image/lote303.png"),
+                Image.asset("image/lote176.png"),
                 const SizedBox(
                   height: 12,
                 ),
@@ -355,7 +354,7 @@ class _LeilaoState extends State<Leilao> {
             ),
             Column(
               children: [
-                Image.asset("image/lote303.png"),
+                Image.asset("image/lote173.png"),
                 const SizedBox(
                   height: 12,
                 ),
@@ -367,6 +366,102 @@ class _LeilaoState extends State<Leilao> {
                         Radius.circular(7),
                       ),
                     ),
+                    fixedSize: const Size(197, 39),
+                    backgroundColor: AppColors.yellow,
+                  ),
+                  child: const Text(
+                    "Ver mais lotes",
+                    style: TextStyle(color: AppColors.white, fontSize: 13.36),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset("image/leilaoGado.png"),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero),
+                      ),
+                      fixedSize: const Size(281, 57),
+                      backgroundColor: AppColors.yellow),
+                  child: const Text(
+                    "10 FEV.2023 às 19:00",
+                    style: TextStyle(color: AppColors.white, fontSize: 14.43),
+                  ),
+                ),
+                SizedBox(
+                  width: 281,
+                  // height: 55,
+                  child: Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                bottom: Radius.circular(6),
+                              ),
+                            ),
+                            fixedSize: const Size(281, 57),
+                            backgroundColor: AppColors.black),
+                        child: const Text(
+                          "LEILÃO VIRTUAL GADO DE CORTE - Lote 175",
+                          style: TextStyle(color: AppColors.white, fontSize: 14.43),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  Image.asset("image/lote303.png"),
+                  const SizedBox(
+                    height: 1,
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                Image.asset("image/lote175.png"),
+                const SizedBox(
+                  height: 12,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset("image/lote176.png"),
+                const SizedBox(
+                  height: 12,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset("image/lote173.png"),
+                const SizedBox(
+                  height: 12,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(7),
+                      ),
+                    ),
+                    fixedSize: const Size(197, 39),
                     backgroundColor: AppColors.yellow,
                   ),
                   child: const Text(
