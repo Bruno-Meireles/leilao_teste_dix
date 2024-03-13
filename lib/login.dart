@@ -14,6 +14,11 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   String email = "";
   String password = "";
+
+  bool passwordVisible = false;
+
+  void passwordVisivility() => passwordVisible = !passwordVisible;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,6 +114,7 @@ class _LoginState extends State<Login> {
                 fillColor: AppColors.white,
                 filled: true,
                 hintText: "********",
+                suffixIcon: Icon(Icons.visibility_off),
                 hintStyle: TextStyle(fontWeight: FontWeight.w300, letterSpacing: 2, color: AppColors.hintText, fontSize: 20),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(
@@ -138,6 +144,8 @@ class _LoginState extends State<Login> {
               onPressed: () {
                 if (email == 'fabioln@ldix.com' && password == '1234567o') {
                   Navigator.pushNamed(context, Routers.vendaDireta.name);
+                } else {
+                  ("Usuário ou senha Inválido");
                 }
               },
               style: ElevatedButton.styleFrom(
