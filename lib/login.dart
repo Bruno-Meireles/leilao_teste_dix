@@ -110,13 +110,17 @@ class _LoginState extends State<Login> {
               },
               keyboardType: TextInputType.text,
               obscureText: true,
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                 fillColor: AppColors.white,
                 filled: true,
                 hintText: "********",
-                suffixIcon: Icon(Icons.visibility_off),
-                hintStyle: TextStyle(fontWeight: FontWeight.w300, letterSpacing: 2, color: AppColors.hintText, fontSize: 20),
-                border: OutlineInputBorder(
+                suffixIcon:GestureDetector(
+                  child:  const Icon(Icons.visibility_off),onTap: () {
+                    
+                  }
+                ),
+                hintStyle: const TextStyle(fontWeight: FontWeight.w300, letterSpacing: 2, color: AppColors.hintText, fontSize: 20),
+                border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(7),
                   ),
