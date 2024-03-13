@@ -7,7 +7,8 @@ class CustomTextFormField extends StatefulWidget {
   final TextInputType keyboardType;
   final TextEditingController controller;
 
-  final bool obscureText;
+  final bool showPassword;
+  final Widget? suffixIcon;
 
   const CustomTextFormField({
     required Key key,
@@ -15,7 +16,8 @@ class CustomTextFormField extends StatefulWidget {
     required this.hintText,
     this.keyboardType = TextInputType.text,
     required this.controller,
-    this.obscureText = false,
+    this.showPassword = false,
+    this.suffixIcon,
   }) : super(key: key);
 
   @override
@@ -38,7 +40,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         TextFormField(
           controller: widget.controller,
           keyboardType: widget.keyboardType,
-          obscureText: widget.obscureText,
+          obscureText: widget.showPassword,
           decoration: InputDecoration(
             fillColor: const Color(0xffFFFFFF),
             filled: true,
@@ -46,6 +48,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             hintStyle: const TextStyle(
               color: Color(0xff2D2D2D),
             ),
+            suffixIcon: widget.suffixIcon,
             border: const OutlineInputBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(3),

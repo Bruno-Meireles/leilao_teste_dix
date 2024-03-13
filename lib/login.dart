@@ -15,9 +15,7 @@ class _LoginState extends State<Login> {
   String email = "";
   String password = "";
 
-  bool passwordVisible = false;
-
-  void passwordVisivility() => passwordVisible = !passwordVisible;
+  bool showPassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -109,15 +107,18 @@ class _LoginState extends State<Login> {
                 password = text;
               },
               keyboardType: TextInputType.text,
-              obscureText: true,
-              decoration:  InputDecoration(
+              obscureText: !showPassword,
+              decoration: InputDecoration(
                 fillColor: AppColors.white,
                 filled: true,
                 hintText: "********",
-                suffixIcon:GestureDetector(
-                  child:  const Icon(Icons.visibility_off),onTap: () {
-                    
-                  }
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      showPassword = !showPassword;
+                    });
+                  },
+                  icon: Icon(showPassword ? Icons.visibility_off : Icons.visibility_off),
                 ),
                 hintStyle: const TextStyle(fontWeight: FontWeight.w300, letterSpacing: 2, color: AppColors.hintText, fontSize: 20),
                 border: const OutlineInputBorder(
@@ -148,8 +149,6 @@ class _LoginState extends State<Login> {
               onPressed: () {
                 if (email == 'fabioln@ldix.com' && password == '1234567o') {
                   Navigator.pushNamed(context, Routers.vendaDireta.name);
-                } else {
-                  ("Usuário ou senha Inválido");
                 }
               },
               style: ElevatedButton.styleFrom(
